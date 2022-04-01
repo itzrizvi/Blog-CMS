@@ -16,5 +16,20 @@ const profileSchema = new Schema({
     bio: {
         type: String,
         trim: true,
-    }
+        maxlength: 500
+    },
+    profilePhoto: String,
+    links: {
+        website: String,
+        github: String,
+        linkedIn: String,
+        twitter: String,
+    },
+    posts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Post'
+        }
+    ],
+
 });
