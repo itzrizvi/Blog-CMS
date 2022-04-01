@@ -1,5 +1,6 @@
 // ALL Requires
 const express = require('express');
+const morgan = require('morgan');
 
 
 // PORT 
@@ -7,6 +8,17 @@ const PORT = process.env.PORT || 5000;
 
 // Creating APP
 const app = express();
+
+// EJS VIEW/TEMPLATE ENGINE
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+// MIDDLE WARES ARRAY
+const middleware = [
+    morgan('dev'),
+    express.urlencoded({ extended: true }),
+    express.json()
+];
 
 
 // ROOT
