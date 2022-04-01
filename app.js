@@ -16,10 +16,11 @@ app.set('views', 'views');
 // MIDDLE WARES ARRAY
 const middleware = [
     morgan('dev'),
+    express.static('public'),
     express.urlencoded({ extended: true }),
-    express.json()
+    express.json(),
 ];
-
+app.use(middleware);
 
 // ROOT
 app.get('/', (req, res) => {
