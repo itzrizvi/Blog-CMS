@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 
 
 // POST SCHEMA
-const postShema = new Schema({
+const postSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -33,4 +33,12 @@ const postShema = new Schema({
             ref: 'Comment'
         }
     ]
-});
+}, { timestamps: true });
+
+
+// POST MODEL
+const Post = model('Post', postSchema);
+
+
+// EXPORTS
+module.exports = Post;
