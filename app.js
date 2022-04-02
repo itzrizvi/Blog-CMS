@@ -24,6 +24,7 @@ app.use(middleware);
 
 // ROOT
 app.get('/', (req, res) => {
+    res.render('pages/auth/signup', { title: 'Create a New Account' })
     res.json({
         message: 'Hello From Blog'
     });
