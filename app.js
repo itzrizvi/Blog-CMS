@@ -1,6 +1,7 @@
 // ALL Requires
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 // IMPORT ROUTES
 const authRoutes = require('./routes/authRoute');
@@ -34,7 +35,14 @@ app.get('/', (req, res) => {
     });
 });
 
-// SERVER LISTEN
-app.listen(PORT, () => {
-    console.log(`Server is Running on PORT ${PORT}`);
-})
+// CONNECT DB WITH MONGOOSE
+mongoose.connect(`mongodb+srv://rizviPc:MIc9SwAQSjvwgUuY@cluster1.fprcc.mongodb.net/myFirstDatabase`, { useNewUrlParser: true })
+    .then(() => {
+        // SERVER LISTEN
+        app.listen(PORT, () => {
+            console.log(`Server is Running on PORT ${PORT}`);
+        });
+    })
+    .catch(err => {
+        console.log(err);
+    })
