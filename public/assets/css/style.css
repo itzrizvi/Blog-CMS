@@ -624,8 +624,10 @@ h2.success-tag {
 
 #sign-up-form input {
   display: block;
-  width: 80%;
+  width: 70%;
   margin: auto;
+  border: 1px solid #F05822;
+  padding: 7px;
 }
 
 /** main-header **/
