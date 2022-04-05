@@ -12,7 +12,6 @@ exports.signUpPostController = async (req, res, next) => {
     try {
 
         let hashedPass = await bcrypt.hash(password, 11);
-        console.log(hashedPass);
         let user = new User({
             userName: username,
             email,
@@ -34,8 +33,15 @@ exports.signUpPostController = async (req, res, next) => {
 exports.logInGetController = (req, res, next) => {
     res.render('pages/auth/login', { title: "Login To Your Account" });
 }
-exports.logInPostController = (req, res, next) => {
+exports.logInPostController = async (req, res, next) => {
+    let { email, password } = req.body;
 
+    try {
+        let user = await User.findOne({ email })
+    } catch (err) {
+        console.log(err);
+        next(err);
+    }
 }
 // LOG OUT FUNCTION CONTROLLER
 exports.logOutController = (req, res, next) => {
