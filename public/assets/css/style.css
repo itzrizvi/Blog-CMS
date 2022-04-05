@@ -605,6 +605,11 @@ img {
 ***/
 
 
+/**** Extra CSS RIZVI ****/
+figure.logo img {
+  width: 200px;
+}
+
 /** main-header **/
 
 .main-header {
