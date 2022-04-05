@@ -22,22 +22,23 @@
             <div class="content-box">
                 <h2>Sign Up Here!</h2>
             </div>
-            <form method="post" action="#" id="sign-up-form" class="default-form">
+            <form method="POST" action="/auth/signUp" id="sign-up-form" class="default-form card card-body">
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="text" name="username" placeholder="Your Name" required>
+                        <input type="text" name="username" id="username" placeholder="Your User Name" required>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="email" name="email" placeholder="Email address" required>
+                        <input type="email" name="email" id="email" placeholder="Email address" required>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="text" name="phone" placeholder="Phone" required>
+                        <input type="text" name="phone" id="phone" placeholder="Phone" required>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="password" name="password" id="password" placeholder="Password" required>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="password" name="passwordTwo" placeholder="Confirm Password" required>
+                        <input type="password" name="passwordTwo" id="passwordTwo" placeholder="Confirm Password"
+                            required>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
                         <button class="theme-btn style-one" type="submit" name="submit-form">Sign Up</button>
