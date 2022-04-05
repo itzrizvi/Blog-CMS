@@ -1,5 +1,6 @@
 // ALL REQUIRES
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
 
 // SIGN UP FUNCTION CONTROLLER
 exports.signUpGetController = (req, res, next) => {
@@ -7,14 +8,18 @@ exports.signUpGetController = (req, res, next) => {
 }
 exports.signUpPostController = async (req, res, next) => {
     let { username, email, phone, password } = req.body;
-    let user = new User({
-        userName: username,
-        email,
-        phone,
-        password
-    });
 
     try {
+
+        let hashedPass = await bcrypt.hash(password, 11);
+        console.log(hashedPass);
+        let user = new User({
+            userName: username,
+            email,
+            phone,
+            password: hashedPass
+        });
+
         let createdUser = await user.save();
         console.log('User Created Successfully', createdUser);
         res.render('pages/auth/signup', { title: 'Create A New Account' });
