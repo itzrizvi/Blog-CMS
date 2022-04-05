@@ -610,6 +610,24 @@ figure.logo img {
   width: 200px;
 }
 
+.extra-padding {
+  padding-top: 250px !important;
+}
+
+.lower-padding {
+  padding: 80px 0px !important;
+}
+
+h2.success-tag {
+  color: #1DBF73 !important;
+}
+
+#sign-up-form input {
+  display: block;
+  width: 80%;
+  margin: auto;
+}
+
 /** main-header **/
 
 .main-header {
