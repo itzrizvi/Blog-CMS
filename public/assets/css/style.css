@@ -622,7 +622,8 @@ h2.success-tag {
   color: #1DBF73 !important;
 }
 
-#sign-up-form input {
+#sign-up-form input,
+#login-form input {
   display: block;
   width: 70%;
   margin: auto;
