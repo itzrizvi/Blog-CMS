@@ -2,6 +2,8 @@
 const express = require('express');
 const morgan = require('morgan');
 
+// IMPORT ROUTES
+const authRoutes = require('./routes/authRoute');
 
 // PORT 
 const PORT = process.env.PORT || 5000;
@@ -22,12 +24,14 @@ const middleware = [
 ];
 app.use(middleware);
 
+app.use('/auth', authRoutes);
+
+
 // ROOT
 app.get('/', (req, res) => {
-    res.render('pages/auth/signup', { title: 'Create a New Account' })
-    // res.json({
-    //     message: 'Hello From Blog'
-    // });
+    res.json({
+        message: 'Hello From Blog'
+    });
 });
 
 // SERVER LISTEN
