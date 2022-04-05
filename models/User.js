@@ -1,6 +1,6 @@
 // All Requires
 const { Schema, model } = require('mongoose');
-const Profile = require('./Profile');
+// const Profile = require('./Profile');
 
 
 // USER SCHEMA 
@@ -27,7 +27,7 @@ const userSchema = new Schema({
     },
     profile: {
         type: Schema.Types.ObjectId, // it will check if it is the MongoDB ObjectId type or not
-        ref: Profile
+        ref: "Profile"
     }
 }, {
     timestamps: true
