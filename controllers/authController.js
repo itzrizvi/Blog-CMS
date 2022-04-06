@@ -37,7 +37,23 @@ exports.logInPostController = async (req, res, next) => {
     let { email, password } = req.body;
 
     try {
-        let user = await User.findOne({ email })
+        let user = await User.findOne({ email });
+        if (!user) {
+            return res.json({
+                message: "Invalid Credentials"
+            });
+        }
+
+        let matchPassword = await bcrypt.compare(password, user.password);
+        if (!matchPassword) {
+            return res.json({
+                message: "Invalid Credentials"
+            });
+        }
+
+        console.log('Successfully Logged In', user);
+        res.render('pages/auth/login', { title: "Login To Your Account" });
+
     } catch (err) {
         console.log(err);
         next(err);
