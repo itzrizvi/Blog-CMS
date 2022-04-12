@@ -6,6 +6,9 @@ const mongoose = require('mongoose');
 // IMPORT ROUTES
 const authRoutes = require('./routes/authRoute');
 
+// Playground Routes
+const validatorRoutes = require('./playground/validator'); // todo should be removed
+
 // PORT 
 const PORT = process.env.PORT || 5000;
 
@@ -15,6 +18,7 @@ const app = express();
 // EJS VIEW/TEMPLATE ENGINE
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+
 
 // MIDDLE WARES ARRAY
 const middleware = [
@@ -26,6 +30,7 @@ const middleware = [
 app.use(middleware);
 
 app.use('/auth', authRoutes);
+app.use('/playground', validatorRoutes); // todo should be removed
 
 
 // ROOT
