@@ -25,20 +25,36 @@
             <form method="POST" action="/auth/signup" id="sign-up-form" class="default-form card card-body">
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="text" name="username" id="username" placeholder="Your User Name" required>
+                        <input type="text" name="username" id="username"
+                            class="form-control <%= error.username ? 'is-invalid': ''%>" placeholder="Your User Name">
+                        <div class="invalid-feedback">
+                            <%= error.username && error.username %>
+                        </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="email" name="email" id="email" placeholder="Email address" required>
+                        <input type="email" name="email" id="email"
+                            class="form-control <%= error.email ? 'is-invalid': ''%>" placeholder="Email address">
+                        <div class="invalid-feedback">
+                            <%= error.email && error.email %>
+                        </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="text" name="phone" id="phone" placeholder="Phone" required>
+                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="password" name="password" id="password" placeholder="Password" required>
+                        <input type="password" name="password" id="password"
+                            class="form-control <%= error.password ? 'is-invalid': ''%>" placeholder="Password">
+                        <div class="invalid-feedback">
+                            <%= error.password && error.password %>
+                        </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="password" name="passwordTwo" id="passwordTwo" placeholder="Confirm Password"
-                            required>
+                        <input type="password" name="passwordTwo" id="passwordTwo"
+                            class="form-control <%= error.passwordTwo ? 'is-invalid': ''%>"
+                            placeholder="Confirm Password">
+                        <div class="invalid-feedback">
+                            <%= error.passwordTwo && error.passwordTwo %>
+                        </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
                         <button class="theme-btn style-one" type="submit" name="submit-form">Sign Up</button>

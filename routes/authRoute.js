@@ -36,6 +36,8 @@ const signupValidator = [
         .isLength({ min: 6 })
         .withMessage('Your password must be greater than 6 chars!!!'),
     body('passwordTwo')
+        .isLength({ min: 6 })
+        .withMessage('Password didn\'t matched!!!')
         .custom((matchPass, { req }) => {
             if (matchPass !== req.body.password) {
                 return Promise.reject('Password does not matched!!!')
