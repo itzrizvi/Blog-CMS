@@ -6,16 +6,24 @@ const errorFormatter = require('../utils/validationErrorFormatter');
 
 // SIGN UP FUNCTION CONTROLLER
 exports.signUpGetController = (req, res, next) => {
-    res.render('pages/auth/signup', { title: 'Create A New Account', error: {} });
+    res.render('pages/auth/signup', { title: 'Create A New Account', error: {}, value: {} });
 }
 exports.signUpPostController = async (req, res, next) => {
+    let { username, email, phone, password } = req.body;
     let errors = validationResult(req).formatWith(errorFormatter);
 
     if (!errors.isEmpty()) {
-        return res.render('pages/auth/signup', { title: 'Create A New Account', error: errors.mapped() });
+        return res.render('pages/auth/signup', {
+            title: 'Create A New Account',
+            error: errors.mapped(),
+            value: {
+                username,
+                email,
+                phone,
+                password
+            }
+        });
     }
-
-    let { username, email, phone, password } = req.body;
 
 
     try {
