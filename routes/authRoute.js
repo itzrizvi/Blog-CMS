@@ -1,6 +1,7 @@
 // All Requires
 const router = require('express').Router();
 const signupValidator = require('../validator/auth/signupValidator');
+const loginValidator = require('../validator/auth/loginValidator');
 
 // Custom Module/Controller
 const { signUpGetController,
@@ -15,7 +16,7 @@ router.get('/signUp', signUpGetController);
 router.post('/signUp', signupValidator, signUpPostController);
 
 router.get('/logIn', logInGetController);
-router.post('/logIn', logInPostController);
+router.post('/logIn', loginValidator, logInPostController);
 
 router.get('/logOut', logOutController);
 

@@ -25,7 +25,6 @@ exports.signUpPostController = async (req, res, next) => {
         });
     }
 
-
     try {
 
         let hashedPass = await bcrypt.hash(password, 11);
@@ -48,10 +47,23 @@ exports.signUpPostController = async (req, res, next) => {
 }
 // LOGIN FUNCTION CONTROLLER
 exports.logInGetController = (req, res, next) => {
-    res.render('pages/auth/login', { title: "Login To Your Account" });
+    res.render('pages/auth/login', { title: "Login To Your Account", error: {}, value: {} });
 }
 exports.logInPostController = async (req, res, next) => {
     let { email, password } = req.body;
+
+    let errors = validationResult(req).formatWith(errorFormatter);
+
+    if (!errors.isEmpty()) {
+        return res.render('pages/auth/login', {
+            title: "Login To Your Account",
+            error: errors.mapped(),
+            value: {
+                email,
+                password
+            }
+        });
+    }
 
     try {
         let user = await User.findOne({ email });
