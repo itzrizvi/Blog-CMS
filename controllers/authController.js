@@ -47,6 +47,7 @@ exports.signUpPostController = async (req, res, next) => {
 }
 // LOGIN FUNCTION CONTROLLER
 exports.logInGetController = (req, res, next) => {
+    console.log(req.get('Cookie'));
     res.render('pages/auth/login', { title: "Login To Your Account", error: {}, value: {} });
 }
 exports.logInPostController = async (req, res, next) => {
@@ -80,8 +81,8 @@ exports.logInPostController = async (req, res, next) => {
             });
         }
 
-        console.log('Successfully Logged In', user);
-        res.render('pages/auth/login', { title: "Login To Your Account" });
+        res.setHeader('Set-Cookie', 'isLoggedIn=true');
+        res.render('pages/auth/login', { title: "Login To Your Account", error: {}, value: {} });
 
     } catch (err) {
         console.log(err);
