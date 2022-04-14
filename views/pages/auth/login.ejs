@@ -43,6 +43,12 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
                         <button class="theme-btn style-one" type="submit" name="submit-form">Login</button>
                     </div>
+                    <% if(isLoggedIn) {%>
+                        <div class=" col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                            <button class="theme-btn style-one" type="submit" name="submit-form">Logout</button>
+                        </div>
+                        <% } %>
+
                 </div>
             </form>
             <h5 class="my-3">Don't Have an Account? <a href="/auth/signup">Sign Up Here</a> </h5>
