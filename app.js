@@ -3,17 +3,28 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
 require('dotenv').config()
 
 // IMPORT ROUTES
 const authRoutes = require('./routes/authRoute');
+// Creating APP
+const app = express();
 
+// MONGODB URI
+const mongoDBURI = 'mongodb+srv://rizviPc:MIc9SwAQSjvwgUuY@cluster1.fprcc.mongodb.net/myFirstDatabase';
+
+// MONGODB SESSION STORE CONNECT
+const store = new MongoDBStore({
+    uri: mongoDBURI,
+    collection: 'blogCMSSessions',
+    expires: 2 * 60 * 60 * 1000 // 2 hours expires
+});
 
 // PORT 
 const PORT = process.env.PORT || 5000;
 
-// Creating APP
-const app = express();
+
 
 // EJS VIEW/TEMPLATE ENGINE
 app.set('view engine', 'ejs');
@@ -31,8 +42,9 @@ const middleware = [
         resave: false,
         saveUninitialized: false,
         cookie: {
-            maxAge: 2 * 60 * 60 * 1000
-        }
+            maxAge: 2 * 60 * 60 * 1000  // 2 hours expires
+        },
+        store: store
     })
 ];
 app.use(middleware);
@@ -48,7 +60,7 @@ app.get('/', (req, res) => {
 });
 
 // CONNECT DB WITH MONGOOSE
-mongoose.connect(`mongodb+srv://rizviPc:MIc9SwAQSjvwgUuY@cluster1.fprcc.mongodb.net/myFirstDatabase`, { useNewUrlParser: true })
+mongoose.connect(mongoDBURI, { useNewUrlParser: true })
     .then(() => {
         // SERVER LISTEN
         app.listen(PORT, () => {

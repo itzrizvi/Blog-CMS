@@ -8,6 +8,7 @@ module.exports = [
         .withMessage('Username must be between 2 to 15 chars!!!')
         .custom(async username => {
             let userFind = await User.findOne({ username });
+            console.log(userFind);
             if (userFind) {
                 return Promise.reject('Username Already in Use!!!')
             }
@@ -21,8 +22,7 @@ module.exports = [
             if (emailFind) {
                 return Promise.reject('Email is already in use!!!')
             }
-        })
-        .normalizeEmail(),
+        }),
     body('password')
         .isLength({ min: 6 })
         .withMessage('Your password must be greater than 6 chars!!!'),
@@ -31,7 +31,8 @@ module.exports = [
         .withMessage('Password didn\'t matched!!!')
         .custom((matchPass, { req }) => {
             if (matchPass !== req.body.password) {
-                return Promise.reject('Password does not matched!!!')
+                throw new Error('Password does not matched!!!')
             }
+            return true
         })
 ];

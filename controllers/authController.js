@@ -29,7 +29,7 @@ exports.signUpPostController = async (req, res, next) => {
 
         let hashedPass = await bcrypt.hash(password, 11);
         let user = new User({
-            userName: username,
+            username,
             email,
             phone,
             password: hashedPass
