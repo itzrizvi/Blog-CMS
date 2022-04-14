@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
+require('dotenv').config()
 
 // IMPORT ROUTES
 const authRoutes = require('./routes/authRoute');
