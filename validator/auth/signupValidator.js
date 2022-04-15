@@ -31,8 +31,7 @@ module.exports = [
         .withMessage('Password didn\'t matched!!!')
         .custom((matchPass, { req }) => {
             if (matchPass !== req.body.password) {
-                throw new Error('Password does not matched!!!')
+                return Promise.reject('Password does not matched!!!')
             }
-            return true
         })
 ];

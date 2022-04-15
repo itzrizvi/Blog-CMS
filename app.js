@@ -8,6 +8,8 @@ require('dotenv').config()
 
 // IMPORT ROUTES
 const authRoutes = require('./routes/authRoute');
+// IMPORT CUSTOM MIDDLEWARES
+const { bindUserWithReq } = require('./middleware/authMiddleware');
 // Creating APP
 const app = express();
 
@@ -45,7 +47,8 @@ const middleware = [
             maxAge: 2 * 60 * 60 * 1000  // 2 hours expires
         },
         store: store
-    })
+    }),
+    bindUserWithReq()
 ];
 app.use(middleware);
 
