@@ -8,8 +8,11 @@ require('dotenv').config()
 
 // IMPORT ROUTES
 const authRoutes = require('./routes/authRoute');
+const dashboardRoute = require('./routes/dashboardRoute');
+
 // IMPORT CUSTOM MIDDLEWARES
 const { bindUserWithReq } = require('./middleware/authMiddleware');
+const setLocals = require('./middleware/setLocals');
 // Creating APP
 const app = express();
 
@@ -25,7 +28,6 @@ const store = new MongoDBStore({
 
 // PORT 
 const PORT = process.env.PORT || 5000;
-
 
 
 // EJS VIEW/TEMPLATE ENGINE
@@ -48,11 +50,14 @@ const middleware = [
         },
         store: store
     }),
-    bindUserWithReq()
+    bindUserWithReq(),
+    setLocals()
 ];
 app.use(middleware);
 
+// ROUTE DECLARATION
 app.use('/auth', authRoutes);
+app.use('/dashboard', dashboardRoute);
 
 
 // ROOT
