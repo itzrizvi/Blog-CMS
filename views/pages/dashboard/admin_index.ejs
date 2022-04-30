@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+	<title>GlobaLex - Dahsboard</title>
+	<meta charset="utf-8">
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="assets/dashboard-assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/dashboard-assets/css/animations.css">
+	<link rel="stylesheet" href="assets/dashboard-assets/css/dropify.min.css">
+	<link rel="stylesheet" href="assets/dashboard-assets/css/magicsuggest.css">
+	<link rel="stylesheet" href="assets/dashboard-assets/css/fonts.css">
+	<link rel="stylesheet" href="assets/dashboard-assets/css/main.css" id="color-switcher-link">
+	<script src="assets/dashboard-assets/js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="https://kit.fontawesome.com/944a74bcf3.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="theme-dashboard">
+
+	<div class="preloader">
+		<div class="preloader_image"></div>
+	</div>
+
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			<!-- template sections -->
+
+			<header class="page_header_side page_header_side_sticked active-slide-side-header ds">
+				<span class="toggle_menu_side toggler_light header-slide">
+					<span></span>
+				</span>
+				<div class="scrollbar-macosx">
+					<div class="side_header_inner">
+						<div class="greylinks">
+							<!-- user -->
+
+							<div class="user-menu">
+								<div class="user-menu-media">
+									<img src="assets/dashboard-assets/images/team/01.jpg" alt="">
+								</div>
+								<div class="user-menu-info">
+									<h4>Vlad Andersen</h4>
+									<ul class="nav menu-side-click">
+										<li class="active">
+											<a href="#">
+												Admin
+											</a>
+											<ul>
+												<li>
+													<a href="admin_profile.html">
+														<i class="fa fa-user"></i>
+														Profile
+													</a>
+												</li>
+												<li>
+													<a href="admin_profile_edit.html">
+														<i class="fa fa-edit"></i>
+														Edit Profile
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-sign-out"></i>
+														Log Out
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- main side nav start -->
+							<nav class="mainmenu_side_wrapper">
+								<h3 class="main_bg_color2">GlobaLex</h3>
+								<ul class="nav menu-side-click">
+									<li class="active">
+										<a href="admin_index.html">
+											<i class="fa fa-th-large"></i>
+											Dashboard
+										</a>
+
+									</li>
+								</ul>
+								<ul class="nav menu-side-click">
+									<li>
+										<a href="admin_allblogs.html">
+											<i class="fa fa-file-text"></i>
+											Blog
+										</a>
+										<ul>
+											<li>
+												<a href="admin_allblogs.html">
+													All Blogs
+												</a>
+											</li>
+											<li>
+												<a href="admin_addblog.html">
+													Add Blog
+												</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="admin_allnews.html">
+											<i class="fa fa-newspaper"></i>
+											News
+										</a>
+										<ul>
+											<li>
+												<a href="admin_allnews.html">
+													All News
+												</a>
+											</li>
+											<li>
+												<a href="admin_addnews.html">
+													Add News
+												</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-book"></i>
+											Category & Tags
+										</a>
+										<ul>
+											<li>
+												<a href="admin_addcategories.html">
+													Add Categories
+												</a>
+											</li>
+											<li>
+												<a href="admin_addtags.html">
+													Add Tags
+												</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="admin_allslider.html">
+											<i class="fa fa-folder-open"></i>
+											Slider
+										</a>
+										<ul>
+											<li>
+												<a href="admin_allslider.html">
+													All Slides
+												</a>
+											</li>
+											<li>
+												<a href="admin_addslider.html">
+													Add a Slide
+												</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="admin_allservice.html">
+											<i class="fa fa-handshake"></i>
+											Services
+										</a>
+										<ul>
+											<li>
+												<a href="admin_allservice.html">
+													All Services
+												</a>
+											</li>
+											<li>
+												<a href="admin_addservice.html">
+													Add Service
+												</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="admin_allstudyabroad.html">
+											<i class="fa fa-graduation-cap"></i>
+											Study Abroad
+										</a>
+										<ul>
+											<li>
+												<a href="admin_allstudyabroad.html">
+													All Countries
+												</a>
+											</li>
+											<li>
+												<a href="admin_addstudyabroad.html">
+													Add Country
+												</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="admin_allvisaassistance.html">
+											<i class="fa fa-plane-departure"></i>
+											Visa Assistance
+										</a>
+										<ul>
+											<li>
+												<a href="admin_allvisaassistance.html">
+													All Visa's
+												</a>
+											</li>
+											<li>
+												<a href="admin_addvisaassistance.html">
+													Add Visa
+												</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="admin_allmember.html">
+											<i class="fa fa-teamspeak"></i>
+											Team
+										</a>
+										<ul>
+											<li>
+												<a href="admin_allmember.html">
+													All Members
+												</a>
+											</li>
+											<li>
+												<a href="admin_addmember.html">
+													Add Member
+												</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="admin_enquiries.html">
+											<i class="fa fa-question"></i>
+											Enquiries
+										</a>
+										<ul>
+											<li>
+												<a href="admin_enquiries.html">
+													All Enquiries
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="admin_messages.html">
+											<i class="fa fa-comments"></i>
+											Messages
+										</a>
+										<ul>
+											<li>
+												<a href="admin_messages.html">
+													All Messages
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="admin_allusers.html">
+											<i class="fa fa-user"></i>
+											Users
+										</a>
+										<ul>
+											<li>
+												<a href="admin_allusers.html">
+													All Users
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="admin_alladmins.html">
+											<i class="fa fa-user-graduate"></i>
+											Admins
+										</a>
+										<ul>
+											<li>
+												<a href="admin_alladmins.html">
+													All Admins
+												</a>
+											</li>
+											<li>
+												<a href="admin_addadmin.html">
+													Add Admin
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</nav>
+							<!-- eof main side nav -->
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<section
+				class="ls ms section_padding_top_50 section_padding_bottom_50 columns_padding_5 extra-css-dashboard">
+				<div class="container-fluid">
+
+					<div class="row">
+						<div class="col-sm-12">
+							<h3>Dashboard</h3>
+						</div>
+					</div>
+					<!-- .row -->
+
+					<div class="row">
+						<div class="col-sm-6 col-lg-3">
+
+							<div class="teaser media after_cover color_bg_1">
+
+								<div class="media-body">
+									<h4 class="counter highlight" data-from="0" data-to="2630" data-speed="1800">0</h4>
+									<p>Total Users</p>
+								</div>
+
+								<div class="media-right media-middle">
+									<div class="teaser_icon size_normal">
+										<i class="fa fa-user"></i>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- .col-* -->
+
+						<div class="col-sm-6 col-lg-3">
+
+							<div class="teaser media after_cover color_bg_2">
+
+								<div class="media-body">
+									<h4 class="highlight counter-wrap">
+										<span class="counter" data-from="0" data-to="223" data-speed="2500">0</span>
+									</h4>
+									<p>Total Enquiries</p>
+								</div>
+
+								<div class="media-right media-middle">
+									<div class="teaser_icon size_normal">
+										<i class="fa fa-question"></i>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- .col-* -->
+
+						<div class="col-sm-6 col-lg-3">
+
+							<div class="teaser media after_cover color_bg_3">
+
+								<div class="media-body">
+									<h4 class="counter highlight" data-from="0" data-to="325" data-speed="2100">0</h4>
+									<p>Total Blogs</p>
+								</div>
+								<div class="media-right media-middle">
+									<div class="teaser_icon size_normal">
+										<i class="fa fa-flag"></i>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- .col-* -->
+
+						<div class="col-sm-6 col-lg-3">
+
+							<div class="teaser media after_cover color_bg_1">
+
+								<div class="media-body">
+									<h4 class="highlight counter-wrap">
+										<span class="counter" data-from="0" data-to="121" data-speed="2500">0</span>
+									</h4>
+									<p>Total News</p>
+								</div>
+								<div class="media-right media-middle">
+									<div class="teaser_icon size_normal">
+										<i class="fa fa-file"></i>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- .col-* -->
+					</div>
+
+
+					<div class="row">
+						<div class="col-xs-12 col-md-6">
+
+							<div class="with_background with_padding">
+								<h4>
+									Latest News
+								</h4>
+								<div class="admin-scroll-panel scrollbar-macosx">
+									<ul class="list1 no-bullets">
+										<li class="item-editable">
+											<div class="media">
+												<div class="media-left">
+													<img src="assets/dashboard-assets/images/team/01.jpg" alt="...">
+												</div>
+												<div class="media-body">
+													<h5>
+														Alex Walker
+														<small>2 hours ago</small>
+													</h5>
+													<div>
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum,
+														corporis. Voluptatibus odio perspiciatis non quisquam provident,
+														quasi eaque officia.
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="item-editable">
+											<div class="media">
+												<div class="media-left">
+													<img src="assets/dashboard-assets/images/team/02.jpg" alt="...">
+												</div>
+												<div class="media-body">
+													<h5>
+														Janet C. Donnalds
+														<small>5 hours ago</small>
+													</h5>
+													<div>
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+														itaque dolor laboriosam dolores magnam mollitia, voluptatibus
+														inventore accusamus illo.
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="item-editable">
+											<div class="media">
+												<div class="media-left">
+													<img src="assets/dashboard-assets/images/team/03.jpg" alt="...">
+												</div>
+												<div class="media-body">
+													<h5>
+														Victoria Grow
+														<small>1 day ago</small>
+													</h5>
+													<div>
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+														Labore, esse, magni aliquam quisquam modi delectus veritatis est
+														ut culpa minus repellendus.
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="item-editable">
+											<div class="media">
+												<div class="media-left">
+													<img src="assets/dashboard-assets/images/team/01.jpg" alt="...">
+												</div>
+												<div class="media-body">
+													<h5>
+														Alex Walker
+														<small>2 hours ago</small>
+													</h5>
+													<div>
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum,
+														corporis. Voluptatibus odio perspiciatis non quisquam provident,
+														quasi eaque officia.
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!-- .admin-scroll-panel -->
+								<div class="text-right greylinks panel-view-all">
+									<a href="admin_newses.html">View All</a>
+								</div>
+							</div>
+							<!-- .with_background -->
+						</div>
+						<div class="col-xs-12 col-md-6">
+
+							<div class="with_background with_padding">
+								<h4>
+									Latest Blogs
+								</h4>
+								<div class="admin-scroll-panel scrollbar-macosx">
+									<ul class="list1 no-bullets">
+										<li class="item-editable">
+											<div class="media">
+												<div class="media-left">
+													<img src="assets/dashboard-assets/images/team/01.jpg" alt="...">
+												</div>
+												<div class="media-body">
+													<h5>
+														Alex Walker
+														<small>2 hours ago</small>
+													</h5>
+													<div>
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum,
+														corporis. Voluptatibus odio perspiciatis non quisquam provident,
+														quasi eaque officia.
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="item-editable">
+											<div class="media">
+												<div class="media-left">
+													<img src="assets/dashboard-assets/images/team/02.jpg" alt="...">
+												</div>
+												<div class="media-body">
+													<h5>
+														Janet C. Donnalds
+														<small>5 hours ago</small>
+													</h5>
+													<div>
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
+														itaque dolor laboriosam dolores magnam mollitia, voluptatibus
+														inventore accusamus illo.
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="item-editable">
+											<div class="media">
+												<div class="media-left">
+													<img src="assets/dashboard-assets/images/team/03.jpg" alt="...">
+												</div>
+												<div class="media-body">
+													<h5>
+														Victoria Grow
+														<small>1 day ago</small>
+													</h5>
+													<div>
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+														Labore, esse, magni aliquam quisquam modi delectus veritatis est
+														ut culpa minus repellendus.
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="item-editable">
+											<div class="media">
+												<div class="media-left">
+													<img src="assets/dashboard-assets/images/team/01.jpg" alt="...">
+												</div>
+												<div class="media-body">
+													<h5>
+														Alex Walker
+														<small>2 hours ago</small>
+													</h5>
+													<div>
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum,
+														corporis. Voluptatibus odio perspiciatis non quisquam provident,
+														quasi eaque officia.
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!-- .admin-scroll-panel -->
+								<div class="text-right greylinks panel-view-all">
+									<a href="admin_allblogs.html">View All</a>
+								</div>
+							</div>
+							<!-- .with_background -->
+						</div>
+						<!-- .col-* -->
+					</div>
+					<!-- .row -->
+				</div>
+				<!-- .container -->
+			</section>
+
+			<section class="ls">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12">
+							&copy; Copyrights 2022 || GlobaLex
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+	<script src="assets/dashboard-assets/js/compressed.js"></script>
+	<script src="assets/dashboard-assets/js/vendor/Chart.bundle.min.js"></script>
+	<script src="assets/dashboard-assets/js/dropify.min.js"></script>
+	<script src="assets/dashboard-assets/js/magicsuggest.js"></script>
+	<script src="assets/dashboard-assets/js/main.js"></script>
+	<script src="assets/dashboard-assets/js/admin-charts.js"></script>
+
+</body>
+
+</html>
