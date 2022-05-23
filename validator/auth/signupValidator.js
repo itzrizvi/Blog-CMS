@@ -28,10 +28,12 @@ module.exports = [
         .withMessage('Your password must be greater than 6 chars!!!'),
     body('passwordTwo')
         .isLength({ min: 6 })
-        .withMessage('Password didn\'t matched!!!')
-        .custom((matchPass, { req }) => {
-            if (matchPass !== req.body.password) {
-                return Promise.reject('Password does not matched!!!')
+        .withMessage('Your password must be greater than 6 chars!!!')
+        .custom((passwordTwo, { req }) => {
+            console.log(passwordTwo)
+            if (passwordTwo !== req.body.password) {
+                throw new Error('Password does not matched!!!')
             }
+            return true;
         })
 ];

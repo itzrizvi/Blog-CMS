@@ -12,8 +12,8 @@ const { signUpGetController,
 
 
 // ROUTES
-router.get('/signUp', signUpGetController);
-router.post('/signUp', signupValidator, signUpPostController);
+router.get('/signup', signUpGetController);
+router.post('/signup', signupValidator, signUpPostController);
 
 router.get('/logIn', logInGetController);
 router.post('/logIn', loginValidator, logInPostController);

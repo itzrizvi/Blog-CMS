@@ -9,10 +9,14 @@ exports.signUpGetController = (req, res, next) => {
     res.render('pages/auth/signup', { title: 'Create A New Account', error: {}, value: {} });
 }
 exports.signUpPostController = async (req, res, next) => {
+
     let { username, email, phone, password } = req.body;
+    console.log(req.body);
+
     let errors = validationResult(req).formatWith(errorFormatter);
 
     if (!errors.isEmpty()) {
+        console.log(errors.mapped())
         return res.render('pages/auth/signup', {
             title: 'Create A New Account',
             error: errors.mapped(),
@@ -37,7 +41,7 @@ exports.signUpPostController = async (req, res, next) => {
 
         let createdUser = await user.save();
         console.log('User Created Successfully', createdUser);
-        res.render('pages/auth/signup', { title: 'Create A New Account' });
+        res.render('pages/auth/signup', { title: 'Create A New Account', error: {}, value: {} });
 
     } catch (err) {
         console.log(err);
